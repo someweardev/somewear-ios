@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SomewearCore_Example' do
+  pod 'SomewearCore', :path => '../'
+
+  target 'SomewearCore_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
