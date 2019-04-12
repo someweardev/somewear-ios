@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Somewear'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Somewear SDK'
   s.homepage         = 'https://github.com/someweardev/somewear-ios'
   s.license = { :type => 'Commercial', :text => 'Created and licensed by Somewear Labs. Copyright 2019 Somewear Labs, Inc. All rights reserved.' }
@@ -14,11 +14,11 @@ Pod::Spec.new do |s|
       ss.platform     = :ios, '10.0'
       ss.ios.vendored_frameworks = 'Somewear/SomewearCore.framework'
       ss.preserve_paths = 'Somewear/SomewearCore.framework'
-      ss.dependency = 'libPhoneNumber-iOS', '~> 0.9'
-      ss.dependency = 'PhoneNumberKit', '~> 2.1'
-      ss.dependency = 'PromisesSwift', '~> 1.2'
-      ss.dependency = 'SwiftProtobuf', '~> 1.1'
-      ss.dependency = 'RxSwift', '~> 4.0'
+      ss.dependency 'libPhoneNumber-iOS', '~> 0.9'
+      ss.dependency 'PhoneNumberKit', '~> 2.1'
+      ss.dependency 'PromisesSwift', '~> 1.2'
+      ss.dependency 'SwiftProtobuf', '~> 1.1'
+      ss.dependency 'RxSwift', '~> 4.0'
       ss.frameworks = 'CoreBluetooth'
   end
   
