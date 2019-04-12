@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		0822F63289A172C32060AC9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		2D0412FE75623CB9169E321E /* SomewearCore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SomewearCore.podspec; path = ../SomewearCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2D0412FE75623CB9169E321E /* Somewear.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Somewear.podspec; path = ../Somewear.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* SomewearCore_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomewearCore_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +39,6 @@
 		607FACE51AFB9204008FA782 /* SomewearCore_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomewearCore_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72D7C5FEC622A1EEA13135AF /* Pods_SomewearCore_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomewearCore_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77567B0BD028404CB13AD555 /* Pods-SomewearCore_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomewearCore_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SomewearCore_Tests/Pods-SomewearCore_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9280420652FCD337F1AA35D0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B4C24D6458F528BBC93DCB26 /* Pods-SomewearCore_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomewearCore_Tests.release.xcconfig"; path = "Target Support Files/Pods-SomewearCore_Tests/Pods-SomewearCore_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C74EAEEC2C0968F01C75089F /* Pods_SomewearCore_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomewearCore_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4926E2E787B787C8C72D8BA /* Pods-SomewearCore_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomewearCore_Example.debug.xcconfig"; path = "Target Support Files/Pods-SomewearCore_Example/Pods-SomewearCore_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,9 +110,8 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				2D0412FE75623CB9169E321E /* SomewearCore.podspec */,
+				2D0412FE75623CB9169E321E /* Somewear.podspec */,
 				0822F63289A172C32060AC9C /* README.md */,
-				9280420652FCD337F1AA35D0 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
