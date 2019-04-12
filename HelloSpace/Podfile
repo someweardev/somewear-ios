@@ -1,0 +1,7 @@
+source 'https://github.com/someweardev/somewear-specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+target 'HelloSpace' do
+  pod 'Somewear'
+end

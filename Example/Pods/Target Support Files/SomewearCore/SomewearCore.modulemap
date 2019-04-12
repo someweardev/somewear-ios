@@ -1,6 +1,0 @@
-framework module SomewearCore {
-  umbrella header "SomewearCore-umbrella.h"
-
-  export *
-  module * { export * }
-}

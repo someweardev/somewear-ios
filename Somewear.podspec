@@ -12,8 +12,14 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |ss|
       ss.platform     = :ios, '10.0'
-      ss.ios.vendored_frameworks = "Somewear/SomewearCore.framework"
-      ss.preserve_paths = "Somewear/SomewearCore.framework"
+      ss.ios.vendored_frameworks = 'Somewear/SomewearCore.framework'
+      ss.preserve_paths = 'Somewear/SomewearCore.framework'
+      ss.dependency = 'libPhoneNumber-iOS', '~> 0.9'
+      ss.dependency = 'PhoneNumberKit', '~> 2.1'
+      ss.dependency = 'PromisesSwift', '~> 1.2'
+      ss.dependency = 'SwiftProtobuf', '~> 1.1'
+      ss.dependency = 'RxSwift', '~> 4.0'
+      ss.frameworks = 'CoreBluetooth'
   end
   
   # s.resource_bundles = {
@@ -22,5 +28,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking', '~> 2.3'
 end
