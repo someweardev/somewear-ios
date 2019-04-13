@@ -1,18 +1,48 @@
 PODS:
-  - Somewear (0.1.0):
-    - Somewear/Core (= 0.1.0)
-  - Somewear/Core (0.1.0)
+  - libPhoneNumber-iOS (0.9.13)
+  - PhoneNumberKit (2.6.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 2.6.0)
+    - PhoneNumberKit/UIKit (= 2.6.0)
+  - PhoneNumberKit/PhoneNumberKitCore (2.6.0)
+  - PhoneNumberKit/UIKit (2.6.0):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - PromisesObjC (1.2.7)
+  - PromisesSwift (1.2.7):
+    - PromisesObjC (= 1.2.7)
+  - RxSwift (4.5.0)
+  - Somewear (0.1.1):
+    - Somewear/Core (= 0.1.1)
+  - Somewear/Core (0.1.1):
+    - libPhoneNumber-iOS (~> 0.9)
+    - PhoneNumberKit (~> 2.1)
+    - PromisesSwift (~> 1.2)
+    - RxSwift (~> 4.0)
+    - SwiftProtobuf (~> 1.1)
+  - SwiftProtobuf (1.4.0)
 
 DEPENDENCIES:
   - Somewear
 
 SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - libPhoneNumber-iOS
+    - PhoneNumberKit
+    - PromisesObjC
+    - PromisesSwift
+    - RxSwift
+    - SwiftProtobuf
   https://github.com/someweardev/somewear-specs:
     - Somewear
 
 SPEC CHECKSUMS:
-  Somewear: 89acc944400d7385014639fe765ab28034a1f532
+  libPhoneNumber-iOS: e444379ac18bbfbdefad571da735b2cd7e096caa
+  PhoneNumberKit: 167ee1f0bbb6efce7c62559e620eae745595532f
+  PromisesObjC: 7b28ddd1e78cce8f80f1ada927d2217663a9c672
+  PromisesSwift: b27f410f9ea693753cfd4cfd8ac1c60a471f137b
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  Somewear: 6b274e60da11d2b4b6580789466edaab175e20d9
+  SwiftProtobuf: b06646ed6cdcfc3fecd074c6000fe0c413140e4f
 
-PODFILE CHECKSUM: 39cb3fcb1021defe1b06de9355cebf80b28690d7
+PODFILE CHECKSUM: e609f1aa9baabef8460043331edd27ba679d51f6
 
 COCOAPODS: 1.6.1

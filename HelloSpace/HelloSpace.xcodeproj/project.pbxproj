@@ -167,13 +167,25 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HelloSpace/Pods-HelloSpace-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${PODS_ROOT}/Somewear/Somewear/SomewearCore.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SomewearCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libPhoneNumber_iOS.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
