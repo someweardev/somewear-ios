@@ -6,6 +6,6 @@ use_frameworks!
 
 target 'HelloSpace' do
 
-#  pod 'Somewear'
-  pod 'Somewear', :path => '..'
+  pod 'Somewear'
+#  pod 'Somewear', :path => '..'
 end
