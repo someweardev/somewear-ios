@@ -85,7 +85,6 @@
 				0F3CBD6E13D733D4E6CE0491 /* Pods-HelloSpace.debug.xcconfig */,
 				58C4BACB7931459C76DFBB21 /* Pods-HelloSpace.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -372,6 +371,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 566S998XU2;
 				INFOPLIST_FILE = HelloSpace/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,6 +391,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 566S998XU2;
 				INFOPLIST_FILE = HelloSpace/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
