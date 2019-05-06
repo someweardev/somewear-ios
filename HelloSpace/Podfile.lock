@@ -1,5 +1,31 @@
 PODS:
+  - iOSDFULibrary (4.3.0):
+    - ZIPFoundation (~> 0.9.8)
   - libPhoneNumber-iOS (0.9.13)
+  - MaterialComponents/Buttons (81.0.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (81.0.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Application (81.0.0)
+  - MaterialComponents/private/Math (81.0.0)
+  - MaterialComponents/ShadowElevations (81.0.0)
+  - MaterialComponents/ShadowLayer (81.0.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (81.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Typography (81.0.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
   - PhoneNumberKit (2.6.0):
     - PhoneNumberKit/PhoneNumberKitCore (= 2.6.0)
     - PhoneNumberKit/UIKit (= 2.6.0)
@@ -12,37 +38,55 @@ PODS:
   - RxSwift (4.5.0)
   - Somewear (0.1.2):
     - Somewear/Core (= 0.1.2)
+    - Somewear/UI (= 0.1.2)
   - Somewear/Core (0.1.2):
+    - iOSDFULibrary (~> 4.3.0)
     - libPhoneNumber-iOS (~> 0.9.13)
     - PhoneNumberKit (~> 2.6.0)
     - PromisesSwift (~> 1.2.7)
     - RxSwift (~> 4.5.0)
     - SwiftProtobuf (~> 1.4.0)
+  - Somewear/UI (0.1.2):
+    - MaterialComponents/Buttons (~> 81.0.0)
+    - MaterialComponents/ShadowLayer (~> 81.0.0)
   - SwiftProtobuf (1.4.0)
+  - ZIPFoundation (0.9.9)
 
 DEPENDENCIES:
-  - Somewear
+  - Somewear (from `..`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - iOSDFULibrary
     - libPhoneNumber-iOS
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
     - PhoneNumberKit
     - PromisesObjC
     - PromisesSwift
     - RxSwift
     - SwiftProtobuf
-  https://github.com/someweardev/somewear-specs:
-    - Somewear
+    - ZIPFoundation
+
+EXTERNAL SOURCES:
+  Somewear:
+    :path: ".."
 
 SPEC CHECKSUMS:
+  iOSDFULibrary: 41a38d1d2550bf2b0c81e7ccd006af3a96c8149b
   libPhoneNumber-iOS: e444379ac18bbfbdefad571da735b2cd7e096caa
+  MaterialComponents: 9ef60e1abd89463ac018ca6d354be41fd5df059a
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   PhoneNumberKit: 167ee1f0bbb6efce7c62559e620eae745595532f
   PromisesObjC: 7b28ddd1e78cce8f80f1ada927d2217663a9c672
   PromisesSwift: b27f410f9ea693753cfd4cfd8ac1c60a471f137b
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  Somewear: 9cee426dc9b8a0d9fe0a2540654b8062f31c18d5
+  Somewear: fd44faa9e1d4972a545b47e266c31f7b1066cc79
   SwiftProtobuf: b06646ed6cdcfc3fecd074c6000fe0c413140e4f
+  ZIPFoundation: 89df685c971926b0323087952320bdfee9f0b6ef
 
-PODFILE CHECKSUM: e609f1aa9baabef8460043331edd27ba679d51f6
+PODFILE CHECKSUM: 5ab843b3f9dc0b100e3ee06a961393555962de3b
 
 COCOAPODS: 1.6.1

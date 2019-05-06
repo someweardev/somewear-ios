@@ -14,12 +14,22 @@ Pod::Spec.new do |s|
       ss.platform     = :ios, '10.0'
       ss.ios.vendored_frameworks = 'Somewear/SomewearCore.framework'
       ss.preserve_paths = 'Somewear/SomewearCore.framework'
+      ss.dependency 'iOSDFULibrary', '~> 4.3.0'
       ss.dependency 'libPhoneNumber-iOS', '~> 0.9.13'
       ss.dependency 'PhoneNumberKit', '~> 2.6.0'
       ss.dependency 'PromisesSwift', '~> 1.2.7'
       ss.dependency 'SwiftProtobuf', '~> 1.4.0'
       ss.dependency 'RxSwift', '~> 4.5.0'
       ss.frameworks = 'CoreBluetooth'
+  end
+  
+  s.subspec 'UI' do |ss|
+      ss.platform     = :ios, '10.0'
+      ss.ios.vendored_frameworks = 'Somewear/SomewearUI.framework'
+      ss.preserve_paths = 'Somewear/SomewearUI.framework'
+      ss.dependency 'MaterialComponents/Buttons', '~> 81.0.0'
+      ss.dependency 'MaterialComponents/ShadowLayer', '~> 81.0.0'
+      ss.frameworks = 'UIKit'
   end
   
   # s.resource_bundles = {
