@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		JCwD47txjm2L4x+ECvX3ZbtkmKY=
+		+pkXtX2LUhlkJx0ulMxFQgLNkdw=
 		</data>
 		<key>Headers/SomewearUI-Swift.h</key>
 		<data>
@@ -18,23 +18,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9jXNeIoq3O//ZIAVhMZKy8SAww0=
-		</data>
-		<key>Modules/SomewearUI.swiftmodule/arm.swiftdoc</key>
-		<data>
-		QvrQ2rDcCY4LKmOx+r+uCXw5xa4=
-		</data>
-		<key>Modules/SomewearUI.swiftmodule/arm.swiftmodule</key>
-		<data>
-		h7lR8xmbfaRAXQNwdQg26favOUw=
+		gRL9eboXZTHfkofWNrVUKv4qv54=
 		</data>
 		<key>Modules/SomewearUI.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		dnCQ1EvFdVsBKSoW22xqDTcQyNo=
+		85ePJYRLHwb2P5PlaI+TDzBKz8c=
 		</data>
 		<key>Modules/SomewearUI.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		0XAugzKt+e8rtgcFNTblMIstBb8=
+		Dh+Aqad3NjXY62ESHYj8Kwbd8Tw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,11 +39,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JCwD47txjm2L4x+ECvX3ZbtkmKY=
+			+pkXtX2LUhlkJx0ulMxFQgLNkdw=
 			</data>
 			<key>hash2</key>
 			<data>
-			ym1a3Ctis/7dOjdOBKSviz5iHi5IYw4gIAfAiNIETY4=
+			eYlEAcjopR+ZW6gNrI4m1FU3koDejAXeViExwHXw+KI=
 			</data>
 		</dict>
 		<key>Headers/SomewearUI-Swift.h</key>
@@ -76,48 +68,26 @@
 			VOvC+8JSNq+FgI85RaFoDv+akjLwUXAcGwpOy3ju4HE=
 			</data>
 		</dict>
-		<key>Modules/SomewearUI.swiftmodule/arm.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			QvrQ2rDcCY4LKmOx+r+uCXw5xa4=
-			</data>
-			<key>hash2</key>
-			<data>
-			Bes6f7+UzGUOkaQBdcgCJxEuX5Xu7jJccKwVAj3ZRXw=
-			</data>
-		</dict>
-		<key>Modules/SomewearUI.swiftmodule/arm.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			h7lR8xmbfaRAXQNwdQg26favOUw=
-			</data>
-			<key>hash2</key>
-			<data>
-			SXZe24E6APMiDTPVl/a3XWoQ735jnOtvYClqPlQJot0=
-			</data>
-		</dict>
 		<key>Modules/SomewearUI.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dnCQ1EvFdVsBKSoW22xqDTcQyNo=
+			85ePJYRLHwb2P5PlaI+TDzBKz8c=
 			</data>
 			<key>hash2</key>
 			<data>
-			JNd/SYuuKtRPotvlbeRCejcb68opF0kOeVuxwlepTgM=
+			iM+x5+wPVjEHGl/daf9ebhH9jr9fi3j6nQStGRqaqm0=
 			</data>
 		</dict>
 		<key>Modules/SomewearUI.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0XAugzKt+e8rtgcFNTblMIstBb8=
+			Dh+Aqad3NjXY62ESHYj8Kwbd8Tw=
 			</data>
 			<key>hash2</key>
 			<data>
-			hIItjl9dlKAxjU2n46eLSrX332DHRVTvHHr17h9pXHw=
+			/aFKn6A5S/dHMxyqEstm6uvzt3dvwMfdlaHnLozB00U=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
