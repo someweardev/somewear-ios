@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
       ss.dependency 'PhoneNumberKit', '~> 2.6.0'
       ss.dependency 'PromisesSwift', '~> 1.2.7'
       ss.dependency 'SwiftProtobuf', '~> 1.4.0'
-      ss.dependency 'RxSwift', '~> 4.5.0'
+      ss.dependency 'RxSwift', '~> 5.0.0'
       ss.frameworks = 'CoreBluetooth'
   end
   
