@@ -36,17 +36,17 @@ PODS:
   - PromisesSwift (1.2.8):
     - PromisesObjC (= 1.2.8)
   - RxSwift (5.0.0)
-  - Somewear (0.1.5):
-    - Somewear/Core (= 0.1.5)
-    - Somewear/UI (= 0.1.5)
-  - Somewear/Core (0.1.5):
+  - Somewear (0.1.6):
+    - Somewear/Core (= 0.1.6)
+    - Somewear/UI (= 0.1.6)
+  - Somewear/Core (0.1.6):
     - iOSDFULibrary (~> 4.3.0)
     - libPhoneNumber-iOS (~> 0.9.13)
     - PhoneNumberKit (~> 2.6.0)
     - PromisesSwift (~> 1.2.7)
     - RxSwift (~> 5.0.0)
     - SwiftProtobuf (~> 1.4.0)
-  - Somewear/UI (0.1.5):
+  - Somewear/UI (0.1.6):
     - MaterialComponents/Buttons (~> 81.0.0)
     - MaterialComponents/ShadowLayer (~> 81.0.0)
     - Somewear/Core
@@ -54,7 +54,7 @@ PODS:
   - ZIPFoundation (0.9.9)
 
 DEPENDENCIES:
-  - Somewear (from `..`)
+  - Somewear
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -69,10 +69,8 @@ SPEC REPOS:
     - RxSwift
     - SwiftProtobuf
     - ZIPFoundation
-
-EXTERNAL SOURCES:
-  Somewear:
-    :path: ".."
+  https://github.com/someweardev/somewear-specs:
+    - Somewear
 
 SPEC CHECKSUMS:
   iOSDFULibrary: 41a38d1d2550bf2b0c81e7ccd006af3a96c8149b
@@ -84,10 +82,10 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  Somewear: e8f869a6a9af73d5fd58dd48a3396a46325e09b6
+  Somewear: 9df0a4ee1e21a423f37b04aa78cc330bb27d1710
   SwiftProtobuf: b06646ed6cdcfc3fecd074c6000fe0c413140e4f
   ZIPFoundation: 89df685c971926b0323087952320bdfee9f0b6ef
 
-PODFILE CHECKSUM: c1002cf2f1f368b667e73b5d9dd9f97eba8343b4
+PODFILE CHECKSUM: deaff999062fad664f979a7889fa03a795b39c1a
 
 COCOAPODS: 1.6.1
