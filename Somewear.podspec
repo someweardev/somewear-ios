@@ -27,6 +27,7 @@ Pod::Spec.new do |s|
       ss.platform     = :ios, '10.0'
       ss.ios.vendored_frameworks = 'Somewear/SomewearUI.framework'
       ss.preserve_paths = 'Somewear/SomewearUI.framework'
+      ss.dependency 'Somewear/Core'
       ss.dependency 'MaterialComponents/Buttons', '~> 81.0.0'
       ss.dependency 'MaterialComponents/ShadowLayer', '~> 81.0.0'
       ss.frameworks = 'UIKit'
