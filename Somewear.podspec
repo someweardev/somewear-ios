@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Somewear'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'Somewear SDK'
   s.homepage         = 'https://github.com/someweardev/somewear-ios'
   s.license = { :type => 'Commercial', :text => 'Created and licensed by Somewear Labs. Copyright 2019 Somewear Labs, Inc. All rights reserved.' }
