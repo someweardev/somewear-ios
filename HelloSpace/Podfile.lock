@@ -32,28 +32,28 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (2.6.0)
   - PhoneNumberKit/UIKit (2.6.0):
     - PhoneNumberKit/PhoneNumberKitCore
-  - PromisesObjC (1.2.7)
-  - PromisesSwift (1.2.7):
-    - PromisesObjC (= 1.2.7)
+  - PromisesObjC (1.2.8)
+  - PromisesSwift (1.2.8):
+    - PromisesObjC (= 1.2.8)
   - RxSwift (4.5.0)
-  - Somewear (0.1.2):
-    - Somewear/Core (= 0.1.2)
-    - Somewear/UI (= 0.1.2)
-  - Somewear/Core (0.1.2):
+  - Somewear (0.1.3):
+    - Somewear/Core (= 0.1.3)
+    - Somewear/UI (= 0.1.3)
+  - Somewear/Core (0.1.3):
     - iOSDFULibrary (~> 4.3.0)
     - libPhoneNumber-iOS (~> 0.9.13)
     - PhoneNumberKit (~> 2.6.0)
     - PromisesSwift (~> 1.2.7)
     - RxSwift (~> 4.5.0)
     - SwiftProtobuf (~> 1.4.0)
-  - Somewear/UI (0.1.2):
+  - Somewear/UI (0.1.3):
     - MaterialComponents/Buttons (~> 81.0.0)
     - MaterialComponents/ShadowLayer (~> 81.0.0)
   - SwiftProtobuf (1.4.0)
   - ZIPFoundation (0.9.9)
 
 DEPENDENCIES:
-  - Somewear (from `..`)
+  - Somewear
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -68,10 +68,8 @@ SPEC REPOS:
     - RxSwift
     - SwiftProtobuf
     - ZIPFoundation
-
-EXTERNAL SOURCES:
-  Somewear:
-    :path: ".."
+  https://github.com/someweardev/somewear-specs:
+    - Somewear
 
 SPEC CHECKSUMS:
   iOSDFULibrary: 41a38d1d2550bf2b0c81e7ccd006af3a96c8149b
@@ -80,13 +78,13 @@ SPEC CHECKSUMS:
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   PhoneNumberKit: 167ee1f0bbb6efce7c62559e620eae745595532f
-  PromisesObjC: 7b28ddd1e78cce8f80f1ada927d2217663a9c672
-  PromisesSwift: b27f410f9ea693753cfd4cfd8ac1c60a471f137b
+  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  Somewear: fd44faa9e1d4972a545b47e266c31f7b1066cc79
+  Somewear: 178e899a17adfe4c5faff5973b3972d9c4fa81c7
   SwiftProtobuf: b06646ed6cdcfc3fecd074c6000fe0c413140e4f
   ZIPFoundation: 89df685c971926b0323087952320bdfee9f0b6ef
 
-PODFILE CHECKSUM: 5ab843b3f9dc0b100e3ee06a961393555962de3b
+PODFILE CHECKSUM: e609f1aa9baabef8460043331edd27ba679d51f6
 
 COCOAPODS: 1.6.1
