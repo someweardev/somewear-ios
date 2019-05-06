@@ -21,25 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // setup status bar
-        statusBar.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(statusBar)
-        
-        // setup send message button
-        sendMessageButton.translatesAutoresizingMaskIntoConstraints = false
-        sendMessageButton.setTitle(NSLocalizedString("Send Message", comment: "Send Message"), for: .normal)
-        sendMessageButton.addTarget(self, action: #selector(didPressSendMessageButton), for: .touchUpInside)
-        view.addSubview(sendMessageButton)
-        
-        // setup constraints
-        NSLayoutConstraint.activate([
-            statusBar.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor),
-            statusBar.leftAnchor.constraint(equalTo: view.leftAnchor),
-            statusBar.rightAnchor.constraint(equalTo: view.rightAnchor),
-            
-            sendMessageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            sendMessageButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            ])
+        setupStatusBar()
+        setupSendMessageButton()
         
         // handle status updates
         device.payload
@@ -55,6 +38,33 @@ class ViewController: UIViewController {
                 self.sendMessageButton.isEnabled = value == .connected
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func setupStatusBar() {
+        // setup status bar
+        statusBar.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(statusBar)
+        
+        // setup constraints
+        NSLayoutConstraint.activate([
+            statusBar.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor),
+            statusBar.leftAnchor.constraint(equalTo: view.leftAnchor),
+            statusBar.rightAnchor.constraint(equalTo: view.rightAnchor)
+            ])
+    }
+    
+    private func setupSendMessageButton() {
+        // setup send message button
+        sendMessageButton.translatesAutoresizingMaskIntoConstraints = false
+        sendMessageButton.setTitle(NSLocalizedString("Send Message", comment: "Send Message"), for: .normal)
+        sendMessageButton.addTarget(self, action: #selector(didPressSendMessageButton), for: .touchUpInside)
+        view.addSubview(sendMessageButton)
+        
+        // setup constraints
+        NSLayoutConstraint.activate([
+            sendMessageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sendMessageButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            ])
     }
     
     @objc private func didPressSendMessageButton() {
