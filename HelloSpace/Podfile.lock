@@ -1,7 +1,8 @@
 PODS:
-  - iOSDFULibrary (4.3.0):
-    - ZIPFoundation (~> 0.9.8)
-  - libPhoneNumber-iOS (0.9.13)
+  - iOSDFULibrary (4.6.1):
+    - ZIPFoundation (= 0.9.9)
+  - libPhoneNumber-iOS (0.9.15)
+  - MaterialComponents/AnimationTiming (81.0.0)
   - MaterialComponents/Buttons (81.0.0):
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
@@ -11,81 +12,126 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
+  - MaterialComponents/Cards (81.0.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+  - MaterialComponents/FeatureHighlight (81.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFTextAccessibility
   - MaterialComponents/Ink (81.0.0):
     - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (81.0.0):
+    - MaterialComponents/private/Application
   - MaterialComponents/private/Application (81.0.0)
+  - MaterialComponents/private/Icons/Base (81.0.0)
+  - MaterialComponents/private/Icons/ic_check_circle (81.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/KeyboardWatcher (81.0.0):
+    - MaterialComponents/private/Application
   - MaterialComponents/private/Math (81.0.0)
+  - MaterialComponents/private/Overlay (81.0.0)
+  - MaterialComponents/Ripple (81.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Math
+  - MaterialComponents/schemes/Color (81.0.0)
   - MaterialComponents/ShadowElevations (81.0.0)
   - MaterialComponents/ShadowLayer (81.0.0):
     - MaterialComponents/ShadowElevations
+  - MaterialComponents/ShapeLibrary (81.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Shapes
   - MaterialComponents/Shapes (81.0.0):
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
+  - MaterialComponents/Snackbar (81.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - "MaterialComponents/Snackbar+ColorThemer (81.0.0)":
+    - MaterialComponents/schemes/Color
+    - MaterialComponents/Snackbar
+  - MaterialComponents/Tabs (81.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
   - MaterialComponents/Typography (81.0.0):
     - MaterialComponents/private/Application
     - MaterialComponents/private/Math
   - MDFInternationalization (2.0.0)
   - MDFTextAccessibility (2.0.0)
-  - PhoneNumberKit (2.6.0):
-    - PhoneNumberKit/PhoneNumberKitCore (= 2.6.0)
-    - PhoneNumberKit/UIKit (= 2.6.0)
-  - PhoneNumberKit/PhoneNumberKitCore (2.6.0)
-  - PhoneNumberKit/UIKit (2.6.0):
-    - PhoneNumberKit/PhoneNumberKitCore
   - PromisesObjC (1.2.8)
   - PromisesSwift (1.2.8):
     - PromisesObjC (= 1.2.8)
-  - RxSwift (5.0.0)
-  - Somewear (0.1.6):
-    - Somewear/Core (= 0.1.6)
-    - Somewear/UI (= 0.1.6)
-  - Somewear/Core (0.1.6):
-    - iOSDFULibrary (~> 4.3.0)
-    - libPhoneNumber-iOS (~> 0.9.13)
-    - PhoneNumberKit (~> 2.6.0)
-    - PromisesSwift (~> 1.2.7)
-    - RxSwift (~> 5.0.0)
-    - SwiftProtobuf (~> 1.4.0)
-  - Somewear/UI (0.1.6):
+  - RxSwift (5.0.1)
+  - Somewear (0.2.0):
+    - Somewear/Core (= 0.2.0)
+    - Somewear/UI (= 0.2.0)
+  - Somewear/Core (0.2.0):
+    - iOSDFULibrary (~> 4.6.1)
+    - libPhoneNumber-iOS (~> 0.9.15)
+    - PromisesSwift (~> 1.2.8)
+    - RxSwift (~> 5.0.1)
+    - SwiftProtobuf (~> 1.7.0)
+  - Somewear/UI (0.2.0):
     - MaterialComponents/Buttons (~> 81.0.0)
+    - MaterialComponents/Cards (~> 81.0.0)
+    - MaterialComponents/FeatureHighlight (~> 81.0.0)
+    - MaterialComponents/schemes/Color (~> 81.0.0)
     - MaterialComponents/ShadowLayer (~> 81.0.0)
+    - MaterialComponents/ShapeLibrary (~> 81.0.0)
+    - MaterialComponents/Snackbar (~> 81.0.0)
+    - "MaterialComponents/Snackbar+ColorThemer (~> 81.0.0)"
+    - MaterialComponents/Tabs (~> 81.0.0)
     - Somewear/Core
-  - SwiftProtobuf (1.4.0)
+  - SwiftProtobuf (1.7.0)
   - ZIPFoundation (0.9.9)
 
 DEPENDENCIES:
-  - Somewear
+  - Somewear (from `..`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - iOSDFULibrary
     - libPhoneNumber-iOS
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
-    - PhoneNumberKit
     - PromisesObjC
     - PromisesSwift
     - RxSwift
     - SwiftProtobuf
     - ZIPFoundation
-  https://github.com/someweardev/somewear-specs:
-    - Somewear
+
+EXTERNAL SOURCES:
+  Somewear:
+    :path: ".."
 
 SPEC CHECKSUMS:
-  iOSDFULibrary: 41a38d1d2550bf2b0c81e7ccd006af3a96c8149b
-  libPhoneNumber-iOS: e444379ac18bbfbdefad571da735b2cd7e096caa
+  iOSDFULibrary: 3053cf01eaabec37dc7372fb77ae4a218b577c55
+  libPhoneNumber-iOS: 0a32a9525cf8744fe02c5206eb30d571e38f7d75
   MaterialComponents: 9ef60e1abd89463ac018ca6d354be41fd5df059a
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
-  PhoneNumberKit: 167ee1f0bbb6efce7c62559e620eae745595532f
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  Somewear: 9df0a4ee1e21a423f37b04aa78cc330bb27d1710
-  SwiftProtobuf: b06646ed6cdcfc3fecd074c6000fe0c413140e4f
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  Somewear: 91f1d2d813155e2caf2670e4c50afe62511e9cca
+  SwiftProtobuf: 4fd9645e69b72cbae6ec8da5be0cdd20ca6565dd
   ZIPFoundation: 89df685c971926b0323087952320bdfee9f0b6ef
 
-PODFILE CHECKSUM: deaff999062fad664f979a7889fa03a795b39c1a
+PODFILE CHECKSUM: 995913638a55bfd72da7e472530813db89efd26b
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.0

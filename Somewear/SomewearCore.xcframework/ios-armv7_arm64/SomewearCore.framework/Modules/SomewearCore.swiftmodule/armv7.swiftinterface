@@ -1,0 +1,517 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name SomewearCore
+import CoreBluetooth
+import Foundation
+import Promises
+import RxSwift
+@_exported import SomewearCore
+import Swift
+import SwiftProtobuf
+import UIKit
+import iOSDFULibrary
+import libPhoneNumber_iOS
+public enum BleError : Swift.Error {
+  case peripheralNotFound
+  case peripheralDisconnected
+  case characteristicBusy
+  case bluetoothDisabled
+  case connectFailure
+  public static func == (a: SomewearCore.BleError, b: SomewearCore.BleError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum DeviceConnectionState {
+  case disconnected
+  case scanning
+  case connected
+  public static func == (a: SomewearCore.DeviceConnectionState, b: SomewearCore.DeviceConnectionState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum DeviceTrackingState {
+  case disconnected
+  case disabled
+  case enabled
+  public static func == (a: SomewearCore.DeviceTrackingState, b: SomewearCore.DeviceTrackingState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum DeviceActivityState {
+  case disconnected
+  case sending
+  case listening
+  case sleeping
+  public static func == (a: SomewearCore.DeviceActivityState, b: SomewearCore.DeviceActivityState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum DeviceError : Swift.Error {
+  case unknown
+  case transferAborted
+  case error
+  case timeout
+  public static func == (a: SomewearCore.DeviceError, b: SomewearCore.DeviceError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public struct DefaultsStore<ValueType> {
+  public func putValue(value: ValueType?, key: Swift.String)
+  public func getValue(key: Swift.String) -> ValueType?
+}
+extension DefaultsStore where ValueType : Swift.Decodable, ValueType : Swift.Encodable {
+  public static func with(_ name: Swift.String) -> SomewearCore.DefaultsStore<ValueType>
+}
+extension DefaultsStore where ValueType : SwiftProtobuf.Message {
+  public static func with(_ name: Swift.String) -> SomewearCore.DefaultsStore<ValueType>
+}
+extension DefaultsStore where ValueType : SomewearCore.UserDefaultsEligible {
+  public static func with(_ name: Swift.String) -> SomewearCore.DefaultsStore<ValueType>
+}
+extension DefaultsStore where ValueType : Swift.RawRepresentable {
+  public static func with(_ name: Swift.String) -> SomewearCore.DefaultsStore<ValueType>
+}
+public enum CoordinateUtil {
+  public static func degreeMinuteDtoFromDecimalCoordinate(_ coordinate: Swift.Double) -> Swift.Int32
+  public static func roundCoordinateComponentToInt(_ decimalValue: Swift.Double) -> Swift.Int
+}
+public class AnonymousPayload : SomewearCore.DevicePayload {
+  final public let data: Foundation.Data
+  public init(data: Foundation.Data, info: SomewearCore.PayloadInfo, packageValue: Swift.Int)
+  override open func serializeData() -> Foundation.Data
+  public var payloadInfo: SomewearCore.PayloadInfo {
+    get
+  }
+  override public init(info: SomewearCore.PayloadInfo, packageTypeValue: Swift.Int, timeout: Foundation.TimeInterval? = super, collapseKey: Swift.UInt? = super, priority: Swift.UInt? = super, retry: SomewearCore.DevicePayloadRetry? = super)
+  @objc deinit
+}
+public enum AppDefaultModule {
+  public static var userIdProvider: (() -> Swift.String)?
+}
+public class SomewearProperties {
+  public var logProvider: (() -> SomewearCore.LogFacade)?
+  public init()
+  @objc deinit
+}
+public enum IntegrationPersona : Swift.Int {
+  case none
+  case geos
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct TrackingFrequency {
+  public var gpsSeconds: Foundation.TimeInterval
+  public var sendingSeconds: Foundation.TimeInterval
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  public var gpsSecondsOrDefault: Swift.Int {
+    get
+  }
+  public var sendingSecondsOrDefault: Swift.Int {
+    get
+  }
+  public init(gpsSeconds: Foundation.TimeInterval = TimeInterval(0), sendingSeconds: Foundation.TimeInterval = TimeInterval(0))
+}
+public struct TrackingCoordinate {
+  public let coordinate: SomewearCore.Coordinate
+  public let timestamp: Foundation.Date
+  public init(coordinate: SomewearCore.Coordinate, timestamp: Foundation.Date)
+}
+public struct PhoneNumber {
+  public let value: Swift.String
+  public init?(unformatted: Swift.String)
+}
+public class DataPayload : SomewearCore.DevicePayload {
+  final public let data: Foundation.Data
+  public convenience init(data: Foundation.Data, parcelId: SomewearCore.ParcelId? = nil)
+  override open func serializeData() -> Foundation.Data
+  override public init(info: SomewearCore.PayloadInfo, packageTypeValue: Swift.Int, timeout: Foundation.TimeInterval? = super, collapseKey: Swift.UInt? = super, priority: Swift.UInt? = super, retry: SomewearCore.DevicePayloadRetry? = super)
+  @objc deinit
+}
+public enum CommonError : Swift.Error {
+  case illegalArgument
+  case illegalState
+  public static func == (a: SomewearCore.CommonError, b: SomewearCore.CommonError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public class UserAccountDefault<ValueType> : SomewearCore.BaseDefault<ValueType> {
+  override open func key() -> Swift.String
+  required public init(name: Swift.String, mapper: SomewearCore.DefaultMapper<ValueType>)
+  @objc deinit
+}
+extension UserAccountDefault where ValueType : Swift.Decodable, ValueType : Swift.Encodable {
+  public class func with(_ name: Swift.String) -> Self
+}
+extension UserAccountDefault where ValueType : SwiftProtobuf.Message {
+  public class func with(_ name: Swift.String) -> Self
+}
+extension UserAccountDefault where ValueType : SomewearCore.UserDefaultsEligible {
+  public class func with(_ name: Swift.String) -> Self
+}
+extension UserAccountDefault where ValueType : Swift.RawRepresentable {
+  public class func with(_ name: Swift.String) -> Self
+}
+public enum Schedulers {
+  public static func main() -> RxSwift.MainScheduler
+  public static func computation() -> RxSwift.ConcurrentDispatchQueueScheduler
+  public static func io() -> RxSwift.ConcurrentDispatchQueueScheduler
+  public static func serial(name: Swift.String = #function) -> RxSwift.SerialDispatchQueueScheduler
+  public static func serial(queue: Dispatch.DispatchQueue) -> RxSwift.SerialDispatchQueueScheduler
+}
+public protocol Command {
+}
+public protocol CommandParserDelegate {
+  func commandParser(parser: SomewearCore.CommandParser, didParseCommand command: SomewearCore.Command)
+  func commandParser(parser: SomewearCore.CommandParser, didParseInvalidDataLength: Swift.Int)
+}
+@objc public class CommandParser : ObjectiveC.NSObject {
+  final public let delegate: SomewearCore.CommandParserDelegate
+  public init(delegate: SomewearCore.CommandParserDelegate)
+  public func parseData(_ data: Foundation.Data)
+  public func reset()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct Coordinate : Swift.Codable, Swift.CustomStringConvertible, Swift.Equatable {
+  public static var compareThreshold: Swift.Double
+  public static var precision: Swift.Int
+  public var latitude: Swift.Double
+  public var longitude: Swift.Double
+  public init?(latitude: Swift.Double, longitude: Swift.Double)
+  public var description: Swift.String {
+    get
+  }
+  public var formattedText: Swift.String {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public static func == (a: SomewearCore.Coordinate, b: SomewearCore.Coordinate) -> Swift.Bool
+}
+public enum SomewearDeviceError : Swift.Error {
+  case sizeLimitExceeded
+  public static func == (a: SomewearCore.SomewearDeviceError, b: SomewearCore.SomewearDeviceError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public class SomewearDevice {
+  public static var instance: SomewearCore.SomewearDevice
+  public static func setup(properties: SomewearCore.SomewearProperties)
+  public static var instanceProvider: () -> SomewearCore.SomewearDevice
+  public static func isSendableQuality(_ quality: Swift.Int) -> Swift.Bool
+  public var connectionState: RxSwift.BehaviorSubject<SomewearCore.DeviceConnectionState> {
+    get
+  }
+  public var payload: RxSwift.Observable<SomewearCore.DevicePayload> {
+    get
+  }
+  public var quality: RxSwift.BehaviorSubject<Swift.Int> {
+    get
+  }
+  public var battery: RxSwift.BehaviorSubject<Swift.Int> {
+    get
+  }
+  public var activityState: RxSwift.BehaviorSubject<SomewearCore.DeviceActivityState> {
+    get
+  }
+  public var trackingState: RxSwift.BehaviorSubject<SomewearCore.DeviceTrackingState> {
+    get
+  }
+  public var trackingFrequency: RxSwift.BehaviorSubject<SomewearCore.TrackingFrequency> {
+    get
+  }
+  public var gpsInitialFix: RxSwift.BehaviorSubject<Swift.Bool> {
+    get
+  }
+  public var imei: RxSwift.BehaviorSubject<Swift.String> {
+    get
+  }
+  public var firmwareUpdateStatus: RxSwift.BehaviorSubject<SomewearCore.FirmwareUpdateStatus> {
+    get
+  }
+  public var firmwareUpdateProgress: RxSwift.BehaviorSubject<Swift.Double> {
+    get
+  }
+  public var isFirmwareUpdateInProgress: Swift.Bool {
+    get
+  }
+  public var wakeDate: Foundation.Date {
+    get
+  }
+  public func toggleScan() -> Promises.Promise<SomewearCore.DeviceConnectionState>
+  public func disconnect()
+  @discardableResult
+  public func send(payload: SomewearCore.DevicePayload) -> RxSwift.Observable<SomewearCore.DevicePayload>
+  public func cancel(payload: SomewearCore.DevicePayload)
+  public func toggleTracking() -> Promises.Promise<Swift.Bool>
+  public func toggleTracking(isEnabled: Swift.Bool, coordinateProvider: Promises.Promise<SomewearCore.TrackingCoordinate?>) -> Promises.Promise<Swift.Bool>
+  public func updateTrackingFrequency(_ frequency: SomewearCore.TrackingFrequency) -> Promises.Promise<SomewearCore.TrackingFrequency>
+  public func updateGpsInitialFix(_ gpsInitialFix: Swift.Bool) -> Promises.Promise<Swift.Bool>
+  public func registerUser(userAccountId: Swift.Int) -> Promises.Promise<Swift.Int>
+  public func startFirmwareUpdate() -> Promises.Promise<Swift.Bool>
+  public func ignoreFirmwareUpdate()
+  @objc deinit
+}
+public protocol SafeProtocol {
+  var queue: Dispatch.DispatchQueue { get }
+}
+extension SafeProtocol {
+  public func read(_ reader: @escaping (Self) -> Swift.Void)
+  public func write(_ writer: @escaping (Self) -> Swift.Void)
+}
+open class Safe : SomewearCore.SafeProtocol {
+  final public let queue: Dispatch.DispatchQueue
+  public init(qos: Dispatch.DispatchQoS = DispatchQoS.default)
+  @objc deinit
+}
+public class ItemSafe<ItemType> {
+  public var item: ItemType
+  public init(_ item: ItemType, qos: Dispatch.DispatchQoS = DispatchQoS.default)
+  public func read(_ reader: @escaping (ItemType) -> Swift.Void)
+  public func write(_ writer: @escaping (SomewearCore.ItemSafe<ItemType>) -> Swift.Void)
+  @objc deinit
+}
+open class BaseDefault<ValueType> {
+  open func key() -> Swift.String
+  open var value: ValueType? {
+    get
+    set(newValue)
+  }
+  public func defaultValue(_ provider: @escaping () -> ValueType) -> Self
+  @discardableResult
+  public func clear() -> Self
+  required public init(name: Swift.String, mapper: SomewearCore.DefaultMapper<ValueType>)
+  open func toBehaviorSubject(default value: ValueType) -> RxSwift.BehaviorSubject<ValueType>
+  @objc deinit
+}
+public class AppDefault<ValueType> : SomewearCore.BaseDefault<ValueType> {
+  required public init(name: Swift.String, mapper: SomewearCore.DefaultMapper<ValueType>)
+  @objc deinit
+}
+extension AppDefault where ValueType : Swift.Decodable, ValueType : Swift.Encodable {
+  public class func with(_ name: Swift.String) -> Self
+}
+extension AppDefault where ValueType : SwiftProtobuf.Message {
+  public class func with(_ name: Swift.String) -> Self
+}
+extension AppDefault where ValueType : SomewearCore.UserDefaultsEligible {
+  public class func with(_ name: Swift.String) -> Self
+}
+extension AppDefault where ValueType : Swift.RawRepresentable {
+  public class func with(_ name: Swift.String) -> Self
+}
+public class DefaultMapper<ValueType> {
+  public init()
+  public func putValue(_ value: ValueType, key: Swift.String, userDefaults: Foundation.UserDefaults)
+  public func getValue(key: Swift.String, userDefaults: Foundation.UserDefaults) -> ValueType?
+  @objc deinit
+}
+public class CodableDefaultMapper<CodableType> : SomewearCore.DefaultMapper<CodableType> where CodableType : Swift.Decodable, CodableType : Swift.Encodable {
+  override public func putValue(_ value: CodableType, key: Swift.String, userDefaults: Foundation.UserDefaults)
+  override public func getValue(key: Swift.String, userDefaults: Foundation.UserDefaults) -> CodableType?
+  override public init()
+  @objc deinit
+}
+public class ProtoDefaultMapper<ProtoType> : SomewearCore.DefaultMapper<ProtoType> where ProtoType : SwiftProtobuf.Message {
+  override public func putValue(_ value: ProtoType, key: Swift.String, userDefaults: Foundation.UserDefaults)
+  override public func getValue(key: Swift.String, userDefaults: Foundation.UserDefaults) -> ProtoType?
+  override public init()
+  @objc deinit
+}
+public class EligibleDefaultMapper<EligibleType> : SomewearCore.DefaultMapper<EligibleType> where EligibleType : SomewearCore.UserDefaultsEligible {
+  override public func putValue(_ value: EligibleType, key: Swift.String, userDefaults: Foundation.UserDefaults)
+  override public func getValue(key: Swift.String, userDefaults: Foundation.UserDefaults) -> EligibleType?
+  override public init()
+  @objc deinit
+}
+public class EnumDefaultMapper<EnumType> : SomewearCore.DefaultMapper<EnumType> where EnumType : Swift.RawRepresentable {
+  override public func putValue(_ value: EnumType, key: Swift.String, userDefaults: Foundation.UserDefaults)
+  override public func getValue(key: Swift.String, userDefaults: Foundation.UserDefaults) -> EnumType?
+  override public init()
+  @objc deinit
+}
+public protocol UserDefaultsEligible : Swift.Decodable, Swift.Encodable {
+}
+extension String : SomewearCore.UserDefaultsEligible {
+}
+extension Bool : SomewearCore.UserDefaultsEligible {
+}
+extension Int : SomewearCore.UserDefaultsEligible {
+}
+extension UInt32 : SomewearCore.UserDefaultsEligible {
+}
+extension Double : SomewearCore.UserDefaultsEligible {
+}
+extension Float : SomewearCore.UserDefaultsEligible {
+}
+extension Date : SomewearCore.UserDefaultsEligible {
+}
+extension Data : SomewearCore.UserDefaultsEligible {
+}
+extension Array : SomewearCore.UserDefaultsEligible where Element : SomewearCore.UserDefaultsEligible {
+}
+extension Dictionary : SomewearCore.UserDefaultsEligible where Key : SomewearCore.UserDefaultsEligible, Value : SomewearCore.UserDefaultsEligible {
+}
+public class TrackingLocationPayload : SomewearCore.DevicePayload {
+  final public let coordinate: SomewearCore.Coordinate
+  final public let timestamp: Foundation.Date
+  override public func serializeData() -> Foundation.Data
+  override public init(info: SomewearCore.PayloadInfo, packageTypeValue: Swift.Int, timeout: Foundation.TimeInterval? = super, collapseKey: Swift.UInt? = super, priority: Swift.UInt? = super, retry: SomewearCore.DevicePayloadRetry? = super)
+  @objc deinit
+}
+public enum LogFacadeLevel : Swift.Int {
+  case verbose
+  case debug
+  case info
+  case warning
+  case error
+  case severe
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol LogFacade {
+  func log(_ level: SomewearCore.LogFacadeLevel, userInfo: [Swift.String : Any], message: () -> Any?)
+}
+public struct LogFacadeConfig {
+  public static var LogUserInfoSourceKey: Swift.String
+}
+public struct Logger {
+  public static func verbose(_ message: @autoclosure () -> Any?, userInfo: [Swift.String : Any] = [:])
+  public static func debug(_ message: @autoclosure () -> Any?, userInfo: [Swift.String : Any] = [:])
+  public static func info(_ message: @autoclosure () -> Any?, userInfo: [Swift.String : Any] = [:])
+  public static func error(_ message: @autoclosure () -> Any?, userInfo: [Swift.String : Any] = [:])
+  public static func severe(_ message: @autoclosure () -> Any?, userInfo: [Swift.String : Any] = [:])
+  public static func warning(_ message: @autoclosure () -> Any?, userInfo: [Swift.String : Any] = [:])
+}
+public struct EmailAddress {
+  public let value: Swift.String
+  public init?(unvalidated: Swift.String)
+  public static func build(unvalidated: Swift.String) -> SomewearCore.EmailAddress?
+}
+public struct PayloadInfo {
+  public static func buildOutbound(parcelId: SomewearCore.ParcelId? = nil) -> SomewearCore.PayloadInfo
+}
+public enum FirmwareUpdateStatus {
+  case none
+  case available
+  case required
+  public static func == (a: SomewearCore.FirmwareUpdateStatus, b: SomewearCore.FirmwareUpdateStatus) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum FirmwareUpdateError : Swift.Error {
+  case busy
+  case deviceDisconnected
+  case error
+  public static func == (a: SomewearCore.FirmwareUpdateError, b: SomewearCore.FirmwareUpdateError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+open class DevicePayload : Swift.Equatable {
+  final public let parcelId: SomewearCore.ParcelId
+  public var status: SomewearCore.DevicePayloadStatus
+  final public let isOutbound: Swift.Bool
+  final public let timeout: Foundation.TimeInterval
+  final public let collapseKey: Swift.UInt
+  final public let priority: Swift.UInt
+  final public let retry: SomewearCore.DevicePayloadRetry
+  public var outboundRegisteredUserId: Swift.Int? {
+    get
+  }
+  final public let packageTypeValue: Swift.Int
+  public var serializedData: Foundation.Data {
+    get
+  }
+  public var packageTypeName: Swift.String {
+    get
+  }
+  public init(info: SomewearCore.PayloadInfo, packageTypeValue: Swift.Int, timeout: Foundation.TimeInterval? = nil, collapseKey: Swift.UInt? = nil, priority: Swift.UInt? = nil, retry: SomewearCore.DevicePayloadRetry? = nil)
+  public var transmissionCount: Swift.Int {
+    get
+  }
+  open func serializeData() -> Foundation.Data
+  public static func == (lhs: SomewearCore.DevicePayload, rhs: SomewearCore.DevicePayload) -> Swift.Bool
+  public static func parseFromPackageData(_ data: Foundation.Data, isOutbound: Swift.Bool, registeredUserId: Swift.Int) -> SomewearCore.DevicePayload?
+  @objc deinit
+}
+public typealias ParcelId = Swift.UInt32
+public enum DevicePayloadStatus : Swift.String {
+  case none
+  case queued
+  case connecting
+  case sending
+  case delivered
+  case error
+  case collapsed
+  case canceled
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum DevicePayloadRetry : Swift.String {
+  case never
+  case afterTimeout
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension DevicePayloadStatus {
+  public var isTerminal: Swift.Bool {
+    get
+  }
+}
+public struct TrackingViewer {
+  public let id: Swift.Int?
+  public let email: SomewearCore.EmailAddress?
+  public let phone: SomewearCore.PhoneNumber?
+  public init?(id: Swift.Int? = nil, email: SomewearCore.EmailAddress? = nil, phone: SomewearCore.PhoneNumber? = nil)
+}
+public struct Version {
+  public let major: Swift.UInt
+  public let minor: Swift.UInt
+  public let patch: Swift.UInt
+  public static func build(_ text: Swift.String) -> SomewearCore.Version?
+}
+public class MessagePayload : SomewearCore.DevicePayload {
+  final public let content: Swift.String
+  final public let phone: SomewearCore.PhoneNumber?
+  final public let email: SomewearCore.EmailAddress?
+  final public let userAccountId: Swift.Int?
+  final public let coordinate: SomewearCore.Coordinate?
+  final public let timestamp: Foundation.Date
+  public var integrationPersona: SomewearCore.IntegrationPersona
+  public convenience init(content: Swift.String, email: SomewearCore.EmailAddress? = nil, phone: SomewearCore.PhoneNumber? = nil, userAccountId: Swift.Int? = nil, coordinate: SomewearCore.Coordinate? = nil, timestamp: Foundation.Date = Date(), parcelId: SomewearCore.ParcelId? = nil)
+  override open func serializeData() -> Foundation.Data
+  override public init(info: SomewearCore.PayloadInfo, packageTypeValue: Swift.Int, timeout: Foundation.TimeInterval? = super, collapseKey: Swift.UInt? = super, priority: Swift.UInt? = super, retry: SomewearCore.DevicePayloadRetry? = super)
+  @objc deinit
+}

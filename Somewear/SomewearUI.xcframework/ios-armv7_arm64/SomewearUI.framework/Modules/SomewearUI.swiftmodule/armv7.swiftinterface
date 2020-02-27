@@ -1,0 +1,295 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name SomewearUI
+import Foundation
+import MaterialComponents.MaterialButtons
+import MaterialComponents
+import MaterialComponents.MaterialShadowLayer
+import Promises
+import RxSwift
+import SomewearCore
+@_exported import SomewearUI
+import Swift
+import UIKit
+@objc public class ShadowView : UIKit.UIView {
+  public var elevation: MaterialComponents.ShadowElevation {
+    get
+    set(newValue)
+  }
+  @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public class ControlCallback : ObjectiveC.NSObject {
+  public static func attach(to: UIKit.UIControl, pressed: @escaping (UIKit.UIControl) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class BlinkView : UIKit.UIView {
+  public var circleColor: UIKit.UIColor {
+    get
+    set(newValue)
+  }
+  public var animate: Swift.Bool {
+    get
+    set(newValue)
+  }
+  public init(initialSize: CoreGraphics.CGSize)
+  public func blink()
+  @objc override dynamic public func layoutSubviews()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+public class Colors {
+  public static var isLightMode: Swift.Bool
+  public static var primaryAccent: UIKit.UIColor {
+    get
+  }
+  public static var primaryAccentPressed: UIKit.UIColor {
+    get
+  }
+  public static var primaryVariant: UIKit.UIColor {
+    get
+  }
+  public static var secondaryAccent: UIKit.UIColor {
+    get
+  }
+  public static var tertiaryAccent: UIKit.UIColor {
+    get
+  }
+  public static var sos: UIKit.UIColor {
+    get
+  }
+  public static var error: UIKit.UIColor {
+    get
+  }
+  public static var background: UIKit.UIColor {
+    get
+  }
+  public static var surface: UIKit.UIColor {
+    get
+  }
+  public static var primaryOnSurface: UIKit.UIColor {
+    get
+  }
+  public static var secondaryOnSurface: UIKit.UIColor {
+    get
+  }
+  public static var tertiaryOnSurface: UIKit.UIColor {
+    get
+  }
+  public static var onPrimary: UIKit.UIColor {
+    get
+  }
+  public static var selectedSurface: UIKit.UIColor {
+    get
+  }
+  public static var separatorColor: UIKit.UIColor {
+    get
+  }
+  public static var goodQuality: UIKit.UIColor {
+    get
+  }
+  public static var okQuality: UIKit.UIColor {
+    get
+  }
+  public static var poorQuality: UIKit.UIColor {
+    get
+  }
+  public static var secondaryText: UIKit.UIColor
+  public static var whitePressed: UIKit.UIColor
+  public static var lightGreyF4F4F4: UIKit.UIColor
+  public static var lightGreyF1F1F1: UIKit.UIColor
+  public static var greyE0E0E0: UIKit.UIColor
+  public static var greyBDBDBD: UIKit.UIColor
+  public static var grey858585: UIKit.UIColor
+  public static var grey9B9B9B: UIKit.UIColor
+  public static var grey969A9E: UIKit.UIColor
+  public static func isDarkColor(_ color: UIKit.UIColor) -> Swift.Bool
+  public static func pressedColor(_ color: UIKit.UIColor) -> UIKit.UIColor
+  public static func brightenBy(_ color: UIKit.UIColor, percent: Swift.Double) -> UIKit.UIColor
+  public static func darkenBy(_ color: UIKit.UIColor, percent: Swift.Double) -> UIKit.UIColor
+  public static func desaturateBy(_ color: UIKit.UIColor, percent: Swift.Double) -> UIKit.UIColor
+  @objc deinit
+}
+public enum DateFormatters {
+  public static var hourMin: Foundation.DateFormatter {
+    get
+  }
+  public static var mediumRelativeMonthDayYear: Foundation.DateFormatter {
+    get
+  }
+  public static var mediumRelativeMonthDayYearHourMin: Foundation.DateFormatter {
+    get
+  }
+  public static var shortRelativeMonthDayYear: Foundation.DateFormatter {
+    get
+  }
+  public static var minutes: Foundation.DateComponentsFormatter {
+    get
+  }
+}
+public enum AttributedStrings {
+  public static func weatherConditionTitle(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func weatherPresentTemp(_ text: Swift.String?) -> Foundation.NSAttributedString
+  public static func default16LineSpacing3PrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func default16Spacing9Grey858585(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func default12Grey9B9B9B(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func default12Kern2Grey9B9B9B(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func bold16Kern1PrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func bold16LineSpacing3PrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func bold12Kern1PrimaryAccent(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func subheadlinePrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func subheadlineSecondaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func subheadline2Grey969A9E(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func subheadline3SecondaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func captionPrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static var headlinePrimaryOnSurfaceAttrs: [Foundation.NSAttributedString.Key : Any] {
+    get
+  }
+  public static func headlinePrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static var headline3TertiaryOnSurfaceAttrs: [Foundation.NSAttributedString.Key : Any] {
+    get
+  }
+  public static func headline2PrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func subheadline3PrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func bold13Kern1Grey9B9B9B(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func bold13Kern1Error(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func medium12Grey9B9B9B(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func medium12Error(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func calloutOnPrimary(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func medium16KernNegPrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func XLTitleOnPrimary(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func XLTitlePrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func bodyPrimaryOnSurface(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func bodyOnPrimary(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func sfUITextRegular15NegKerngrey858585(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func sfUITextRegular15WhiteFFFFFF(_ text: Swift.String) -> Foundation.NSAttributedString
+  public static func sfUITextRegular15NegKernGrey9B9B9B(_ text: Swift.String) -> Foundation.NSAttributedString
+}
+public struct Fonts {
+  public enum Style {
+    case largeTitle
+    case XLTitle
+    case title1
+    case title2
+    case title3
+    case title4
+    case headline
+    case headline2
+    case headline3
+    case body
+    case callout
+    case subheadline
+    case subheadline2
+    case subheadline3
+    case footnote
+    case caption1
+    case caption2
+    public static func == (a: SomewearUI.Fonts.Style, b: SomewearUI.Fonts.Style) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public static var defaultFontProvider: (CoreGraphics.CGFloat) -> UIKit.UIFont
+  public static var boldFontProvider: (CoreGraphics.CGFloat) -> UIKit.UIFont
+  public static var mediumFontProvider: (CoreGraphics.CGFloat) -> UIKit.UIFont
+  public static var condensedFontProvider: (CoreGraphics.CGFloat) -> UIKit.UIFont
+  public static var condensedRegularFontProvider: (CoreGraphics.CGFloat) -> UIKit.UIFont
+  public static func defaultFont(ofSize size: CoreGraphics.CGFloat) -> UIKit.UIFont
+  public static func boldFont(ofSize size: CoreGraphics.CGFloat) -> UIKit.UIFont
+  public static func mediumFont(ofSize size: CoreGraphics.CGFloat) -> UIKit.UIFont
+  public static func condensedFont(ofSize size: CoreGraphics.CGFloat) -> UIKit.UIFont
+  public static func condensedRegularFont(ofSize size: CoreGraphics.CGFloat) -> UIKit.UIFont
+  public static func font(forStyle: SomewearUI.Fonts.Style, isDynamic: Swift.Bool = true) -> UIKit.UIFont
+}
+public enum DeviceScanCoordinator {
+  @discardableResult
+  public static func toggleScan(resultPresenter: UIKit.UIViewController, device: SomewearCore.SomewearDevice) -> Promises.Promise<SomewearCore.DeviceConnectionState>
+}
+public class Images {
+  public static func satelliteIndicator() -> UIKit.UIImage
+  public static func mediumSatelliteIndicator() -> UIKit.UIImage
+  @objc deinit
+}
+public struct Labels {
+  public static func subheadlineLabel() -> UIKit.UILabel
+  public static func detailLabel() -> UIKit.UILabel
+  public static func bold16Grey9B9B9BLabel() -> UIKit.UILabel
+  public static func bold14PrimaryOnSurfaceLabel() -> UIKit.UILabel
+  public static func captionTertiaryOnSurfaceLabel() -> UIKit.UILabel
+  public static func regular14PrimaryOnSurfaceLabel() -> UIKit.UILabel
+}
+public enum SomewearViews {
+  public static func statusBarView(presenter: UIKit.UIViewController) -> SomewearUI.SomewearStatusBarView
+}
+@objc public class SomewearStatusBarView : UIKit.UIView {
+  public static var maxHeight: CoreGraphics.CGFloat
+  public var presenter: UIKit.UIViewController? {
+    get
+    set(newValue)
+  }
+  public func didAppear()
+  public func didDisappear()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  final public let viewModel: SomewearUI.DeviceStatusBarViewModel
+  public var didTap: (() -> Swift.Void)? {
+    get
+    set(newValue)
+  }
+  public var isBottomSeparatorVisible: Swift.Bool {
+    get
+    set(newValue)
+  }
+  public var viewToLayoutOnAnimation: UIKit.UIView? {
+    get
+    set(newValue)
+  }
+  @objc deinit
+}
+public enum Alerts {
+  public static func deviceConnectionErrorAlertController() -> UIKit.UIAlertController
+  public static func bluetoothDisabledAlertController() -> UIKit.UIAlertController
+  public static func bluetoothErrorAlertController() -> UIKit.UIAlertController
+  public static func firmwareUpdateAvailableAlertController(update: @escaping () -> Swift.Void, cancel: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func firmwareUpdateRequiredAlertController(update: @escaping () -> Swift.Void, disconnect: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func tryAgainAlertController(tryAgain: @escaping () -> Swift.Void, cancel: (() -> Swift.Void)? = nil) -> UIKit.UIAlertController
+  public static func mapDownloadConnectionFailed(tryAgain: @escaping () -> Swift.Void, abort: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func mapDownloadPhoneOfflineError() -> UIKit.UIAlertController
+  public static func mapProviderGaveErrorResponse(tryAgain: @escaping () -> Swift.Void, abort: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func mapDownloadLimitReached(fix: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func abortOfflineDownloadConfirmation(abort: @escaping () -> Swift.Void, continue continueBlock: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func unrecognizedDeviceAlertController(register: @escaping () -> Swift.Void, disconnect: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func errorOccurredAlertController() -> UIKit.UIAlertController
+  public static func internetConnectionErrorAlertController() -> UIKit.UIAlertController
+  public static func emailVerificationRequired() -> UIKit.UIAlertController
+  public static func invalidContactEmail() -> UIKit.UIAlertController
+  public static func invalidContactPhoneNumber() -> UIKit.UIAlertController
+  public static func noTrackingViewers(add: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func deviceActivationRequired() -> UIKit.UIAlertController
+  public static func appUpdateRequired(okPressed: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func locationDisabledAlertController(settingsPressed: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func pairingTutorial() -> UIKit.UIAlertController
+  public static func deleteConversationOfflineError() -> UIKit.UIAlertController
+  public static func enableSmartRouting(enablePressed: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+  public static func smartRoutingIntro(learnMore: @escaping () -> Swift.Void) -> UIKit.UIAlertController
+}
+public class DeviceStatusBarViewModel {
+  public var activityState: RxSwift.BehaviorSubject<SomewearCore.DeviceActivityState> {
+    get
+    set(value)
+  }
+  public var deviceName: RxSwift.BehaviorSubject<Swift.String> {
+    get
+    set(value)
+  }
+  public var wakeDateText: RxSwift.BehaviorSubject<Swift.String> {
+    get
+    set(value)
+  }
+  public init()
+  @objc deinit
+}

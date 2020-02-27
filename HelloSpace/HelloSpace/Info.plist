@@ -45,5 +45,9 @@
     <array>
         <string>bluetooth-central</string>
     </array>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Bluetooth is required to connect to your Somewear hotspot.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>Connect to your Somewear hotspot.</string>
 </dict>
 </plist>

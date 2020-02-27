@@ -1,0 +1,11 @@
+framework module SomewearCore {
+  umbrella header "SomewearCore.h"
+
+  export *
+  module * { export * }
+}
+
+module SomewearCore.Swift {
+    header "SomewearCore-Swift.h"
+    requires objc
+}

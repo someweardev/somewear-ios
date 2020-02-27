@@ -24,7 +24,7 @@ end
 ## Usage
 Add the status bar view to your layout so the user scan for a Somewear device and see info such as current battery level.
 ```swift
-private lazy var statusBar = SomewearUI.instance.statusBarView(presenter: self)
+private lazy var statusBar = SomewearViews.statusBarView(presenter: self)
 
 override func viewDidLoad() {
     super.viewDidLoad()

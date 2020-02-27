@@ -14,8 +14,9 @@ import UIKit
 class ViewController: UIViewController {
     
     private lazy var device = SomewearDevice.instance
-    private lazy var statusBar = SomewearUI.instance.statusBarView(presenter: self)
-    private var sendMessageButton = UIButton(type: .system)
+    private lazy var statusBar = SomewearViews.statusBarView(presenter: self)
+    private let sendMessageButton = UIButton(type: .system)
+    private let sendDataButton = UIButton(type: .system)
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
                 self.sendMessageButton.isEnabled = value == .connected
+                self.sendDataButton.isEnabled = value == .connected
             })
             .disposed(by: disposeBag)
     }
@@ -60,28 +62,40 @@ class ViewController: UIViewController {
         sendMessageButton.addTarget(self, action: #selector(didPressSendMessageButton), for: .touchUpInside)
         view.addSubview(sendMessageButton)
         
+        // setup send data button
+        sendDataButton.translatesAutoresizingMaskIntoConstraints = false
+        sendDataButton.setTitle(NSLocalizedString("Send Data", comment: "Send Data"), for: .normal)
+        sendDataButton.addTarget(self, action: #selector(didPressSendDataButton), for: .touchUpInside)
+        view.addSubview(sendDataButton)
+        
         // setup constraints
         NSLayoutConstraint.activate([
             sendMessageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            sendMessageButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            sendMessageButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            sendDataButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sendDataButton.topAnchor.constraint(equalTo: sendMessageButton.bottomAnchor, constant: 30)
             ])
     }
     
     @objc private func didPressSendMessageButton() {
-        #error("provide email to test")
-        let email = ""
+//        #error("provide email to test")
+        let email = "braden@somewearlabs.com"
         let emailAddress = EmailAddress(unvalidated: email)!
         let messagePayload = MessagePayload(content: "Hello from space!", email: emailAddress)
         
         NSLog("send: start; parcelId=\(messagePayload.parcelId)")
         
         device.send(payload: messagePayload)
-            .then { _ in
-                NSLog("send: success; parcelId=\(messagePayload.parcelId)")
-            }
-            .catch { error in
-                NSLog("send: failure; error=\(error)")
-            }
+    }
+    
+    @objc private func didPressSendDataButton() {
+        let data = "I'm just a bunch of bytes".data(using: .utf8)!
+        let dataPayload = DataPayload(data: data)
+        
+        NSLog("send: start; parcelId=\(dataPayload.parcelId)")
+        
+        device.send(payload: dataPayload)
     }
     
     private func didReceivePayload(_ payload: DevicePayload) {
