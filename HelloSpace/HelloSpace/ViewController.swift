@@ -79,8 +79,8 @@ class ViewController: UIViewController {
     }
     
     @objc private func didPressSendMessageButton() {
-//        #error("provide email to test")
-        let email = "braden@somewearlabs.com"
+        #error("provide email to test")
+        let email = ""
         let emailAddress = EmailAddress(unvalidated: email)!
         let messagePayload = MessagePayload(content: "Hello from space!", email: emailAddress)
         

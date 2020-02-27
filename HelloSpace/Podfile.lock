@@ -100,10 +100,12 @@ PODS:
   - ZIPFoundation (0.9.9)
 
 DEPENDENCIES:
-  - Somewear (from `..`)
+  - Somewear
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/someweardev/somewear-specs:
+    - Somewear
+  trunk:
     - iOSDFULibrary
     - libPhoneNumber-iOS
     - MaterialComponents
@@ -115,10 +117,6 @@ SPEC REPOS:
     - SwiftProtobuf
     - ZIPFoundation
 
-EXTERNAL SOURCES:
-  Somewear:
-    :path: ".."
-
 SPEC CHECKSUMS:
   iOSDFULibrary: 3053cf01eaabec37dc7372fb77ae4a218b577c55
   libPhoneNumber-iOS: 0a32a9525cf8744fe02c5206eb30d571e38f7d75
@@ -128,10 +126,10 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
-  Somewear: 91f1d2d813155e2caf2670e4c50afe62511e9cca
+  Somewear: 569cd58c9bd848746092c64b0d5d2340f98ab71a
   SwiftProtobuf: 4fd9645e69b72cbae6ec8da5be0cdd20ca6565dd
   ZIPFoundation: 89df685c971926b0323087952320bdfee9f0b6ef
 
-PODFILE CHECKSUM: 995913638a55bfd72da7e472530813db89efd26b
+PODFILE CHECKSUM: 06ecbcffe5ec1af4badb5716e5ba04c7db916701
 
 COCOAPODS: 1.9.0

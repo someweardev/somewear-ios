@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 source 'https://github.com/someweardev/somewear-specs.git'
 
 platform :ios, '10.0'
@@ -6,6 +6,6 @@ use_frameworks!
 
 target 'HelloSpace' do
   
-#  pod 'Somewear'
-  pod 'Somewear', :path => '..'
+  pod 'Somewear'
+#  pod 'Somewear', :path => '..'
 end

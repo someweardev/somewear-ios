@@ -39,10 +39,4 @@ Pod::Spec.new do |s|
       ss.frameworks = 'UIKit'
   end
   
-  # s.resource_bundles = {
-  #   'SomewearCore' => ['SomewearCore/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
 end
